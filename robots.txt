@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://projectkorven.github.io/sitemap.xml

@@ -1,0 +1,96 @@
+/* Project Korven — estilo do site (12/10/2026). Cores tiradas do logo (laranja medido #DB4C08 sobre preto).
+   Fontes do sistema (sem carregar nada de fora: nenhum dado do visitante vai para terceiros). */
+:root {
+  --fundo: #0b0c0d;
+  --fundo2: #131517;
+  --cartao: #17191c;
+  --borda: #262a2e;
+  --texto: #ebe7e0;
+  --fraco: #9d9a93;
+  --laranja: #db4c08;
+  --laranja-claro: #f2732f;
+  --largura: 980px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--fundo); color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65; -webkit-font-smoothing: antialiased;
+}
+a { color: var(--laranja-claro); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* cabecalho */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(11, 12, 13, .92); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+.topo .dentro {
+  max-width: var(--largura); margin: 0 auto; padding: 10px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.marca { display: flex; align-items: center; gap: 10px; color: var(--texto); font-weight: 800; letter-spacing: .14em; font-size: .95rem; }
+.marca:hover { text-decoration: none; }
+.marca img { width: 34px; height: 34px; border-radius: 7px; }
+.menu { display: flex; gap: 18px; flex-wrap: wrap; font-size: .92rem; }
+.menu a { color: var(--fraco); }
+.menu a:hover, .menu a.atual { color: var(--texto); text-decoration: none; }
+.menu a.atual { border-bottom: 2px solid var(--laranja); padding-bottom: 2px; }
+
+/* capa da pagina inicial */
+.capa {
+  text-align: center; padding: 72px 20px 64px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(219, 76, 8, .18), transparent 60%), var(--fundo);
+  border-bottom: 1px solid var(--borda);
+}
+.capa img { width: 168px; height: 168px; border-radius: 28px; box-shadow: 0 0 60px rgba(219, 76, 8, .35); }
+.capa h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); letter-spacing: .18em; margin: 28px 0 6px; font-weight: 900; }
+.capa .frase { color: var(--fraco); font-size: 1.1rem; margin: 0 auto; max-width: 560px; }
+.selo {
+  display: inline-block; margin-top: 26px; padding: 10px 20px; border: 1px solid var(--laranja);
+  border-radius: 999px; color: var(--laranja-claro); font-weight: 700; letter-spacing: .06em; font-size: .9rem;
+}
+
+/* conteudo */
+main { max-width: var(--largura); margin: 0 auto; padding: 48px 20px 24px; }
+main.texto { max-width: 780px; }
+h1 { font-size: 2rem; margin: 0 0 4px; }
+h2 { font-size: 1.2rem; color: var(--laranja-claro); margin: 36px 0 10px; }
+h3 { font-size: 1.05rem; margin: 0 0 6px; }
+.sub { color: var(--fraco); margin: 0 0 24px; }
+li { margin: 5px 0; }
+hr { border: 0; border-top: 1px solid var(--borda); margin: 48px 0; }
+.aviso { border-left: 3px solid var(--laranja); padding: 10px 16px; background: var(--fundo2); border-radius: 0 8px 8px 0; }
+
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
+.cartao { background: var(--cartao); border: 1px solid var(--borda); border-radius: 12px; padding: 20px; }
+.cartao p { margin: 0; color: var(--fraco); font-size: .95rem; }
+
+/* pagina do criador */
+.criador { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; margin: 12px 0 8px; }
+.criador .inicial {
+  width: 120px; height: 120px; border-radius: 50%; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 35% 30%, var(--laranja-claro), var(--laranja) 60%, #7a2a04);
+  font-size: 2.6rem; font-weight: 900; letter-spacing: .04em; color: #0b0c0d;
+  box-shadow: 0 0 40px rgba(219, 76, 8, .35);
+}
+.criador .nome { font-size: 2.2rem; font-weight: 900; margin: 0; letter-spacing: .04em; }
+.criador .papel { color: var(--laranja-claro); font-weight: 700; margin: 2px 0 0; }
+
+/* rodape */
+.rodape { border-top: 1px solid var(--borda); margin-top: 56px; background: var(--fundo2); }
+.rodape .dentro {
+  max-width: var(--largura); margin: 0 auto; padding: 24px 20px; color: var(--fraco); font-size: .88rem;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.rodape a { color: var(--fraco); }
+.rodape .links { display: flex; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  .menu { gap: 12px; font-size: .88rem; }
+  .capa { padding: 52px 16px 48px; }
+  main { padding: 36px 16px 16px; }
+}
